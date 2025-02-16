@@ -6,7 +6,7 @@ import './App.css'
 function App() {
   return (
     <div>
-      <h1 className='bg-amber-600 text-amber-600'>React App</h1>
+      <h1 className=' text-amber-600'>React App</h1>
       
     </div>
   )
