@@ -220,6 +220,7 @@ export const dummyCourses = [
         "isPublished": true,
         "discount": 20,
         "courseContent": [
+            
             {
                 "chapterId": "chapter1",
                 "chapterOrder": 1,

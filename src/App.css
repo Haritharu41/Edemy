@@ -1,14 +1,19 @@
 @import "tailwindcss";
 
 @theme {
+
   --color-hari: #FFD700;
   --color-secondary: #FFA500;
-  --text-harip: 45px;
+  --text-harip: 36px;
   --text-details-heading-small:26px, 36px;
-  --text-details-heading-large:36px, 44px;
+  --text-details-heading-large:44px;
       --text-home-heading-large:48px, 56px;
       --text-home-heading-small:28px, 34px;
       --text-default:15px, 21px;
 
-      /* --gridTemplateColumns-auto:repeat(auto-fit, minmax(20px, 1fr)); */
+      --grid-template-columns-hari:repeat(auto-fit, minmax(20px, 1fr));
+      --spacing-section-hight:500px; 
+      --max-width-course-card:424px;
+      --shadow-custom-card:0px 4px 15px 2px rgb(0, 0 ,0, 0.1)
+
 }
