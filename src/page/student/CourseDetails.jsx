@@ -6,12 +6,15 @@ import Loading from "../../components/student/Loading";
 import { assets } from "../../assets/assets";
 import humanizeDuration from "humanize-duration";
 import Footer from "../../components/student/Footer";
+import YouTube from "react-youtube";
 
 function CourseDetails() {
   const { id } = useParams();
   const [coursData, setCoursData] = useState(null);
   const [openSection, setOpenSection] = useState({});
   const [isAllreadyEnrolled, setIsAllreadyEnrolled] = useState(false)
+
+  const [playerData, setPlayerData] = useState(null)
 
   const {
     allcourse,
@@ -59,6 +62,8 @@ function CourseDetails() {
           }}
         />
 
+
+
         {/* Rating and reviws */}
         <div className="flex items-center space-x-2 pt-3 pb-1 text-sm">
           <p>{calculateRating(coursData)}</p>
@@ -75,6 +80,8 @@ function CourseDetails() {
               />
             ))}
           </div>
+
+
           <p className="text-blue-500">
             ({coursData.courseRatings.length}
             {coursData.courseRatings.length > 1 ? "Ratings" : "Rating"})
@@ -84,10 +91,15 @@ function CourseDetails() {
             {coursData.enrolledStudents.length > 1 ? "students" : "student"}
           </p>
         </div>
+
+
+
         <p className="text-sm">
-          Course by{" "}
+          Course by
           <span className="text-blue-600 underline">Nishan Sharma</span>
         </p>
+
+        
         <div className="pt-8 text-gray-800">
           <h2 className="text-xl font-semibold">course Structure</h2>
           <div className="pt-5">
@@ -135,7 +147,9 @@ function CourseDetails() {
                           <p>{lecture.lectureTitle}</p>
                           <div className=" flex gap-2">
                             {lecture.isPreviewFree && (
-                              <p className="text-blue-500 cursor-pointer">
+                              <p onClick={()=>setPlayerData({
+                                videoId:lecture.lectureUrl.split('/').pop()
+                              })} className="text-blue-500 cursor-pointer">
                                 Preview
                               </p>
                             )}
@@ -170,7 +184,14 @@ function CourseDetails() {
 
       {/* Right column */}
       <div className=" max-w-course-card z-10 shadow-custom-card  rounded-t md:rounded-none overflow-hidden bg-white minw[300px] sm:min-w[420] ">
-        <img src={coursData?.courseThumbnail} alt=" Course thumbnail" />
+
+        {
+          playerData ? 
+          <YouTube videoId={playerData.videoId } opts={{playerVars:{autoplay:1}}} iframeClassName="w-full aspect-video"/>
+
+          :
+          <img src={coursData?.courseThumbnail} alt=" Course thumbnail" />
+        }
         <div className="p-5">
           <div className="flex items-center gap-2">
             <img

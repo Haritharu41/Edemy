@@ -14,6 +14,7 @@ export const AppContextProvider = (propes) => {
 
   const [allcourse, setAllcourses] = useState([]);
 const [isEducator, setIsEducator] = useState(true)
+const [enrolledCourses, setEnrolledCourses] = useState([])
 
   // Fetching all courses
   const fetchAllCourses = async () => {
@@ -65,9 +66,17 @@ const [isEducator, setIsEducator] = useState(true)
   }
 
 
+  // Fetch User Enrolled Courses
+  const fetchUserEnrolledCourses= async()=>{
+    setEnrolledCourses(dummyCourses)
+  }
+
+
   // UseEffect
   useEffect(() => {
     fetchAllCourses();
+    fetchUserEnrolledCourses()
+
   }, []);
 
   const value = {
@@ -79,7 +88,9 @@ const [isEducator, setIsEducator] = useState(true)
     setIsEducator,
     calculateChpapterTime,
     calculateCourseDuration,
-    calculateNoOfLectures
+    calculateNoOfLectures,
+    enrolledCourses,
+    fetchUserEnrolledCourses 
   };
   return (
     <AppContext.Provider value={value}>{propes.children}</AppContext.Provider>

@@ -14,6 +14,6 @@
       --grid-template-columns-hari:repeat(auto-fit, minmax(20px, 1fr));
       --spacing-section-hight:500px; 
       --max-width-course-card:424px;
-      --shadow-custom-card:0px 4px 15px 2px rgb(0, 0 ,0, 0.1)
+      --shadow-custom-card:0px 4px 15px 2px rgb(0, 0 ,0, 0.1);
 
 }
