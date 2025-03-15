@@ -29,10 +29,10 @@ function App() {
         <Route path="/loading/:path" element={<Loading />} />
 
         <Route path="/educator" element={<Educator />}>
-          <Route path="educator" element={<Dashboard />} />
+          <Route path="/educator" element={<Dashboard />} />
           <Route path="add-course" element={<AddCourse />} />
-          <Route path="My-courses" element={<MyCourses />} />
-          <Route path="students-enrolled" element={<StudentsEnrolled />} />
+          <Route path="my-course" element={<MyCourses />} />
+          <Route path="student-enrolled" element={<StudentsEnrolled />} />
         </Route>
       </Routes>
     </div>
