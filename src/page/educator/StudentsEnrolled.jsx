@@ -32,7 +32,7 @@ function StudentsEnrolled() {
               </th>
             </tr>
           </thead>
-          <tbody>
+          <tbody className="text-sm text-gray-500">
             {enrolledStudents.map((item, index) => (
               <tr key={index} className="border-b border-gray-500/20">
                 <td className="px-4  py-3 text-center hidden sm:not-last:table-cell">

@@ -13,7 +13,7 @@ import Dashboard from "./page/educator/Dashboard";
 import MyCourses from "./page/educator/MyCourses";
 import StudentsEnrolled from "./page/educator/StudentsEnrolled";
 import Navbar from "./components/student/Navbar";
-
+import "quill/dist/quill.snow.css";
 function App() {
    const isEducatorRoute=useMatch('/educator/*')
   return (
