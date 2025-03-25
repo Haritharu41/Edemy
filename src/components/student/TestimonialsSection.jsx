@@ -10,7 +10,7 @@ function TestimonialsSection() {
         sucess and how our
         <br /> platform has made a difference in their lives.
       </p>
-      <div className=" grid md:grid-cols-3  sm:grid-cols-1  gap-8 mt-14 px-40 ">
+      <div className=" grid md:grid-cols-3   gap-8 mt-14 md:px-40 ">
         {dummyTestimonial.map((testimonial, index) => (
           <div
             key={index}
